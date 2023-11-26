@@ -82,7 +82,3 @@ print(pd.concat([vitalstats_temp.head(5), vitalstats_temp.tail(5)]))
 #Looking for null values per column
 print(vitalstats_temp.isnull().sum())
 # 195 null values in all columns leaving 'Year' - Drop? 
-
-
-# Replace non-numeric 'Deaths' values with NaN, then convert to pandas nullable integer type
-# reader_temp['Deaths'] = pd.to_numeric(reader_temp['Deaths'], errors='coerce').astype('Int64')
