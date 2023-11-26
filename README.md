@@ -5,6 +5,6 @@
 
 To do :
 
-1. Verify data source and format
-2. Selection of comparable states strategy and Criteria.
-3. Data analysis for selected states.
+1. Verify data source and format. Due 26th Nov
+2. Selection of comparable states strategy and Criteria. Due 26th Nov
+3. Data analysis for selected states. Due 27th Nov
