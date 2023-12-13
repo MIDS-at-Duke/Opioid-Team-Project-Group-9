@@ -193,14 +193,16 @@ def plot_diff_in_diff_graph(dataset_in, test_state, policy_year, metric_column):
 # plotting for states starts here
 
 ############# WA #############
-# Control vars state setup
+# Enter the Test State Below
 test_state = "WA"
-control_states = ["OR", "WI", "NJ"]
 
-# Control vars year setup
-policy_year = 2012
-start_year = 2008
-end_year = 2015
+# Enter list of states required below, Included the test state
+control_states = ["MN", "OR", "ID"]
+
+# Year control variable
+policy_year = 2012  # year the policy was implemented
+start_year = 2008  # desired start year for analysis
+end_year = 2015  # desired end year for analysis
 
 # ---
 shipment_plot = prepare_data(
@@ -214,14 +216,16 @@ plot_diff_in_diff_graph(shipment_plot, test_state, policy_year, "MME_mul")
 
 ############# FL #############
 
-# Control vars state setup
+# Enter the Test State Below
 test_state = "FL"
-control_states = ["GA", "NC", "LA"]
 
-# Control vars year setup
-policy_year = 2010
-start_year = 2007
-end_year = 2013
+# Enter list of states required below, Included the test state
+control_states = ["GA", "SC", "AL"]
+
+# Year control variable
+policy_year = 2010  # year the policy was implemented
+start_year = 2006  # desired start year for analysis
+end_year = 2013  # desired end year for analysis
 
 # ---
 shipment_plot = prepare_data(

@@ -203,7 +203,7 @@ def plot_diff_in_diff_graph(dataset_in, test_state, policy_year, metric_column):
 test_state = "WA"
 
 # Enter list of states required below, Included the test state
-control_states = ["IL", "IN", "OH"]
+control_states = ["MN", "OR", "ID"]
 
 # Year control variable
 policy_year = 2012  # year the policy was implemented
@@ -222,11 +222,11 @@ plot_diff_in_diff_graph(mortality_plot, test_state, policy_year, "Mortality_mul"
 test_state = "FL"
 
 # Enter list of states required below, Included the test state
-control_states = ["GA", "NC", "MI"]
+control_states = ["GA", "SC", "AL"]
 
 # Year control variable
 policy_year = 2010  # year the policy was implemented
-start_year = 2007  # desired start year for analysis
+start_year = 2006  # desired start year for analysis
 end_year = 2013  # desired end year for analysis
 
 mortality_plot = prepare_data(
@@ -241,12 +241,12 @@ plot_diff_in_diff_graph(mortality_plot, test_state, policy_year, "Mortality_mul"
 test_state = "TX"
 
 # Enter list of states required below, Included the test state
-control_states = ["OK", "AZ", "NM"]
+control_states = ["OK", "NM", "LA"]
 
 # Year control variable
 policy_year = 2007  # year the policy was implemented
 start_year = 2003  # desired start year for analysis
-end_year = 2011  # desired end year for analysis
+end_year = 2010  # desired end year for analysis
 
 mortality_plot = prepare_data(
     mortality, test_state, control_states, policy_year, start_year, end_year
