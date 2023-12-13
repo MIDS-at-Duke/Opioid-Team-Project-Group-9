@@ -28,7 +28,7 @@ mort_mul = 100000
 mortality["Mortality_mul"] = mortality["Mortality_Rate"] * mort_mul
 
 # Global Setting for ylabels so that they are consistent across all plots
-ylabels = f"Mortality per {mort_mul:_} Population"
+ylabels = f"Mortality per {mort_mul:,} Population"
 
 # Path for Saving the plots
 base_path = "03_Plots/01_Mortality/"
