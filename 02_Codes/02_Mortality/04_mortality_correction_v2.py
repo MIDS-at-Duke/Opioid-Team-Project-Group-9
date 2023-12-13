@@ -1,19 +1,20 @@
 """
 To impute the missing death data based on the state level mortality rate and population threshold.
 
-Saves final dataset as mortality_corrected.parquet
+Saves final dataset as 03_Mortality_Imputed.parquet
 
-refer to the mortality_correction_v2.ipynb for EDA and other details like how the population threshold was chosen.
+refer to the 03_mortality_eda_v2.ipynb for EDA and other details like how the population threshold was chosen.
 """
 
 # importing libraries and setting default option
 import pandas as pd
+import matplotlib.pyplot as plt
 
 pd.set_option("mode.copy_on_write", True)
 
 # reading the data files
-df = pd.read_parquet("Data/processed/mortality.parquet")
-population = pd.read_parquet("Data/processed/population.parquet")
+df = pd.read_parquet("01_Data/02_Processed/02_Mortality_Combined.parquet")
+population = pd.read_parquet("01_Data/02_Processed/01_Population.parquet")
 
 # ------------------------------------------
 # initial Cleaning
@@ -138,6 +139,29 @@ def new_death(row):
 # ------------------------------------------
 # filtering for Counties with population threshold to control level of missing data that will be imputed
 
+
+# ------------------------------------------
+# Plotting and saving the Missing Data vs Population Threshold
+# graph to check missing vs population
+threshold = []
+missing = []
+for i in range(0, 300000, 5000):
+    threshold.append(i)
+    missing.append(
+        (df6[df6["Population_y"] >= i]["Mortality_Rate"].isna().sum()) / len(df6) * 100
+    )
+
+# plotting this
+plt.plot(threshold, missing)
+plt.xlabel("Minimum County Population Threshold")
+plt.ylabel("Missing Values in %")
+plt.title("Missing Values vs County Population Threshold")
+
+# Saving this plot
+plt.savefig("03_Plots/01_Mortality/01_Missing_vs_Population.png")
+
+
+# ------------------------------------------
 population_threshold = 50000  # <-------------------Change this later if required
 
 # dropping counties with population less than the threshold
@@ -178,4 +202,4 @@ df9["Mortality_Rate"] = df9["Deaths"] / df9["Population"]
 
 # ------------------------------------------
 # Saving the Final Dataset
-df9.to_parquet("Data/processed/mortality_corrected.parquet", index=False)
+df9.to_parquet("01_Data/02_Processed/03_Mortality_Imputed.parquet", index=False)

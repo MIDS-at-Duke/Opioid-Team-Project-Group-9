@@ -8,8 +8,8 @@ pd.set_option("mode.copy_on_write", True)
 
 # ------------------------------------------
 # reading the files
-z = zipfile.ZipFile("Data/raw/raw_mortality.zip")
-fips = pd.read_csv("Data/raw/county_fips.csv")
+z = zipfile.ZipFile("01_Data/01_Raw/raw_mortality.zip")
+fips = pd.read_csv("01_Data/01_Raw/county_fips.csv")
 
 # extracting list of files from Zip folder to read
 # using files starting with "Underlying" so as to ignore system files
@@ -99,4 +99,4 @@ df5 = df5.rename(columns={"BUYER_COUNTY": "County", "BUYER_STATE": "State"})
 
 # ------------------------------------------
 # Writing to Parquet
-df5.to_parquet("Data/processed/mortality.parquet", index=False)
+df5.to_parquet("01_Data/02_Processed/02_Mortality_Combined.parquet", index=False)
