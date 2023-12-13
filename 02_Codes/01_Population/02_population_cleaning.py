@@ -4,8 +4,8 @@ import pandas as pd
 pd.set_option("mode.copy_on_write", True)
 
 # reading the csv files
-df = pd.read_csv("Data/raw/raw_population.txt", sep="\t")
-fips = pd.read_csv("Data/raw/county_fips.csv")
+df = pd.read_csv("01_Data/01_Raw/raw_population.txt", sep="\t")
+fips = pd.read_csv("01_Data/01_Raw/county_fips.csv")
 
 # ------------------------------------------
 # dropping the unnecessary columns
@@ -102,4 +102,4 @@ df5 = df5.rename(
 # ------------------------------------------
 
 # Writing to Parquet
-df5.to_parquet("Data/processed/population.parquet", index=False)
+df5.to_parquet("01_Data/02_processed/01_Population.parquet", index=False)
