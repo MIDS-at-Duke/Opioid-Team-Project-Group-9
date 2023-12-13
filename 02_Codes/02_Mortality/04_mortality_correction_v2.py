@@ -158,6 +158,7 @@ plt.ylabel("Missing Values in %")
 plt.title("Missing Values vs County Population Threshold")
 
 # Saving this plot
+plt.tight_layout()
 plt.savefig("03_Plots/01_Mortality/01_Missing_vs_Population.png")
 
 

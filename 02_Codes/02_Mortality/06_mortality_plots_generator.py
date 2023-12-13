@@ -241,7 +241,7 @@ plot_diff_in_diff_graph(mortality_plot, test_state, policy_year, "Mortality_mul"
 test_state = "TX"
 
 # Enter list of states required below, Included the test state
-control_states = ["LA", "AR", "OK", "MS", "AL", "AZ", "NM"]
+control_states = ["LA", "OK", "NM"]
 
 # Year control variable
 policy_year = 2007  # year the policy was implemented
